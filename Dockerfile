@@ -1,5 +1,10 @@
 FROM openjdk:11
-ARG JAR_FILE=*.jar
+VOLUME /tmp
+
 EXPOSE 8080
-COPY ${JAR_FILE} demoUser-0.0.1-SNAPSHOT.jar
-ENTRYPOINT ["java","-jar","target/demoUser-0.0.1-SNAPSHOT.jar"]
+
+COPY target/*.jar app.jar
+ENTRYPOINT ["java","-jar","/app.jar"]
+
+HEALTHCHECK --start-period=40s --interval=20s --timeout=5s --retries=5 \
+            CMD curl --fail --silent http://localhost:8080/actuator/health | grep UP || exit 1
