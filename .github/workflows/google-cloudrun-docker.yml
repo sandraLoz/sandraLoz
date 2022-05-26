@@ -52,7 +52,7 @@ on:
 env:
   PROJECT_ID: opplus-351205 # TODO: update Google Cloud project id
   GAR_LOCATION: europe-southwest1 # TODO: update Artifact Registry location
-  SERVICE: sandraloz # TODO: update Cloud Run service name
+  SERVICE: demo-user # TODO: update Cloud Run service name
   REGION: europe-southwest1 # TODO: update Cloud Run service region
 
 jobs:
