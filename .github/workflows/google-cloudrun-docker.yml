@@ -105,10 +105,10 @@ jobs:
           docker build -t demouser:latest ./
           
           echo "Push Docker Image to Container Registry (GCR) **************************"
-          docker tag demouser:latest  eu.gcr.io/opplus-351205/demouser:latest
-          docker tag demouser:latest eu.gcr.io/opplus-351205/demouser:${{ github.sha }}
-          docker push eu.gcr.io/opplus-351205/demouser:latest
-          docker push eu.gcr.io/opplus-351205/demouser:${{ github.sha }}
+          docker tag demouser:latest  gcr.io/opplus-351205/demo-user/demouser:latest
+          docker tag demouser:latest gcr.io/opplus-351205/demo-user/demouser:${{ github.sha }}
+          docker push gcr.io/opplus-351205/demo-user/demouser:latest
+          docker push gcr.io/opplus-351205/demo-user/demouser:${{ github.sha }}
           
           
           #docker build -t "europe-southwest1-docker.pkg.dev/${{ env.PROJECT_ID }}/demo-user/demouser:${{ github.sha }}" ./
