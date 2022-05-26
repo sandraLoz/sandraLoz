@@ -1,7 +1,5 @@
 name: Build and Push Spring Boot Image to Google Cloud Platform
-on:
-  push:
-    branches: [ master ]
+on: [ push ]
 jobs:
   build:
     name: Cloud Run Deployment
