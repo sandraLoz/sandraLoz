@@ -106,10 +106,10 @@ jobs:
           
           echo "Push Docker Image to Container Registry (GCR) **************************"
           
-          docker tag demouser:latest  gcr.io/opplus-351205/demouser:latest
-          docker tag demouser:latest gcr.io/opplus-351205/demouser:${{ github.sha }}
-          docker push gcr.io/opplus-351205/demouser:latest
-          docker push gcr.io/opplus-351205/demouser:${{ github.sha }}
+          docker tag demouser:latest  gcr.io/opplus-351205/images/demouser:latest
+          docker tag demouser:latest gcr.io/opplus-351205/images/demouser:${{ github.sha }}
+          docker push gcr.io/opplus-351205/images/demouser:latest
+          docker push gcr.io/opplus-351205/images/demouser:${{ github.sha }}
           
           
           #docker build -t "europe-southwest1-docker.pkg.dev/${{ env.PROJECT_ID }}/demo-user/demouser:${{ github.sha }}" ./
@@ -119,10 +119,10 @@ jobs:
 
       - name: Push Docker Image to Artifact Registry      
         run: |-
-          docker tag demouser:latest europe-southwest1-docker.pkg.dev/opplus-351205/demo-user/demouser:latest
-          docker tag demouser:latest europe-southwest1-docker.pkg.dev/opplus-351205/demo-user/demouser:${{ github.sha }}
-          docker push europe-southwest1-docker.pkg.dev/opplus-351205/demo-user/demouser:latest
-          docker push europe-southwest1-docker.pkg.dev/opplus-351205/demo-user/demouser:${{ github.sha }}
+          docker tag demouser:latest europe-southwest1-docker.pkg.dev/opplus-351205/demo-user/images/demouser:latest
+          docker tag demouser:latest europe-southwest1-docker.pkg.dev/opplus-351205/demo-user/images/demouser:${{ github.sha }}
+          docker push europe-southwest1-docker.pkg.dev/opplus-351205/demo-user/images/demouser:latest
+          docker push europe-southwest1-docker.pkg.dev/opplus-351205/demo-user/images/demouser:${{ github.sha }}
       # END - Docker auth and build
 
       - name: Deploy to Cloud Run
