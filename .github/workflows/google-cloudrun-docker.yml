@@ -118,8 +118,8 @@ jobs:
 
       - name: Push Docker Image to Artifact Registry      
         run: |-
-          docker tag demouser:latest europe-southwest1-docker.pkg.dev/opplus-351205/images/demouser:latest
-          docker tag demouser:latest europe-southwest1-docker.pkg.dev/opplus-351205/images/demouser:${{ github.sha }}
+          docker tag demouser:latest europe-southwest1-docker.pkg.dev/opplus-351205/demo-user/demouser:latest
+          docker tag demouser:latest europe-southwest1-docker.pkg.dev/opplus-351205/demo-user/demouser:${{ github.sha }}
           docker push europe-southwest1-docker.pkg.dev/opplus-351205/demo-user/demouser:latest
           docker push europe-southwest1-docker.pkg.dev/opplus-351205/demo-user/demouser:${{ github.sha }}
       # END - Docker auth and build
@@ -131,7 +131,7 @@ jobs:
           service: demo-user
           region: ${{ env.REGION }}
           # NOTE: If using a pre-built image, update the image name here
-          image: europe-southwest1-docker.pkg.dev/opplus-351205/demo-user:${{ github.sha }}
+          image: europe-southwest1-docker.pkg.dev/opplus-351205/demo-user/demouser:${{ github.sha }}
 
       # If required, use the Cloud Run url output in later steps
       - name: Show Output
