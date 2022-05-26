@@ -9,7 +9,8 @@
 # Use the official maven/Java 8 image to create a build artifact.
 # https://hub.docker.com/_/maven
 FROM maven:3.8.5-jdk-11 as builder
-EXPOSE 8989
+ENV PORT 8080
+ENV HOST 0.0.0.0
 # Copy local code to the container image.
 WORKDIR /app
 COPY pom.xml .
