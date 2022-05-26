@@ -105,6 +105,7 @@ jobs:
           docker build -t demouser:latest ./
           
           echo "Push Docker Image to Container Registry (GCR) **************************"
+          
           docker tag demouser:latest  gcr.io/opplus-351205/demo-user/demouser:latest
           docker tag demouser:latest gcr.io/opplus-351205/demo-user/demouser:${{ github.sha }}
           docker push gcr.io/opplus-351205/demo-user/demouser:latest
