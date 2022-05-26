@@ -120,8 +120,8 @@ jobs:
         run: |-
           docker tag demouser:latest europe-southwest1-docker.pkg.dev/opplus-351205/images/demouser:latest
           docker tag demouser:latest europe-southwest1-docker.pkg.dev/opplus-351205/images/demouser:${{ github.sha }}
-          docker push europe-southwest1-docker.pkg.dev/opplus-351205/images/demouser:latest
-          docker push europe-southwest1-docker.pkg.dev/opplus-351205/images/demouser:${{ github.sha }}
+          docker push europe-southwest1-docker.pkg.dev/opplus-351205/demo-user/demouser:latest
+          docker push europe-southwest1-docker.pkg.dev/opplus-351205/demo-user/demouser:${{ github.sha }}
       # END - Docker auth and build
 
       - name: Deploy to Cloud Run
