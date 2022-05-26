@@ -104,11 +104,11 @@ jobs:
           echo "BUILD*************************"
           docker build -t demouser:latest ./
           
-      #    echo "Push Docker Image to Container Registry (GCR) **************************"
-      #    docker tag demouser:latest  eu.gcr.io/opplus-351205/demouser:latest
-      #    docker tag demouser:latest eu.gcr.io/opplus-351205/demouser:${{ github.sha }}
-      #    docker push eu.gcr.io/opplus-351205/demouser:latest
-      #    docker push eu.gcr.io/opplus-351205/demouser:${{ github.sha }}
+          echo "Push Docker Image to Container Registry (GCR) **************************"
+          docker tag demouser:latest  eu.gcr.io/opplus-351205/demouser:latest
+          docker tag demouser:latest eu.gcr.io/opplus-351205/demouser:${{ github.sha }}
+          docker push eu.gcr.io/opplus-351205/demouser:latest
+          docker push eu.gcr.io/opplus-351205/demouser:${{ github.sha }}
           
           
           #docker build -t "europe-southwest1-docker.pkg.dev/${{ env.PROJECT_ID }}/demo-user/demouser:${{ github.sha }}" ./
@@ -129,7 +129,7 @@ jobs:
         uses: google-github-actions/deploy-cloudrun@v0
         with:
           service: demo-user
-          region: ${{ env.REGION }}
+          region: europe-southwest1
           # NOTE: If using a pre-built image, update the image name here
           image: europe-southwest1-docker.pkg.dev/opplus-351205/demo-user/demouser:${{ github.sha }}
 
