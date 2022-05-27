@@ -5,7 +5,7 @@ on:
     branches: 
       - master
 env:
-  IMAGE_NAME: demouser
+  IMAGE_NAME: demo-user
   PROJECT_ID: opplus-351205
   GIT_TAG: ${{ github.sha }}
 jobs:
