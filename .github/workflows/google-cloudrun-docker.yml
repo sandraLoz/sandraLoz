@@ -46,5 +46,5 @@ jobs:
       run: |-
         docker tag $IMAGE_NAME:latest europe-southwest1-docker.pkg.dev/$PROJECT_ID/demo-user/$IMAGE_NAME:latest
         docker tag $IMAGE_NAME:latest europe-southwest1-docker.pkg.dev/$PROJECT_ID/demo-user/$IMAGE_NAME:$GIT_TAG
-        docker push europe-southwest1-docker.pkg.dev/$PROJECT_ID/images/$IMAGE_NAME:latest
-        docker push europe-southwest1-docker.pkg.dev/$PROJECT_ID/images/$IMAGE_NAME:$GIT_TAG
+        docker push europe-southwest1-docker.pkg.dev/$PROJECT_ID/demo-user/$IMAGE_NAME:latest
+        docker push europe-southwest1-docker.pkg.dev/$PROJECT_ID/demo-user/$IMAGE_NAME:$GIT_TAG
