@@ -48,12 +48,3 @@ jobs:
         docker tag $IMAGE_NAME:latest europe-southwest1-docker.pkg.dev/$PROJECT_ID/demo-user/$IMAGE_NAME:$GIT_TAG
         docker push europe-southwest1-docker.pkg.dev/$PROJECT_ID/demo-user/$IMAGE_NAME:latest
         docker push europe-southwest1-docker.pkg.dev/$PROJECT_ID/demo-user/$IMAGE_NAME:$GIT_TAG
-        
-    # - name: Deploy to Cloud Run
-    #   id: deploy
-    #   uses: google-github-actions/deploy-cloudrun@v0
-    #   with:
-    #     service: demo-user
-    #    region: europe-southwest1
-    #     # NOTE: If using a pre-built image, update the image name here
-    #     image: europe-southwest1-docker.pkg.dev/$PROJECT_ID/demo-user/$IMAGE_NAME:latest
